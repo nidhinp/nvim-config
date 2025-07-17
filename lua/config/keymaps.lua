@@ -1,5 +1,4 @@
 local keymap = vim.keymap
-local api = vim.api
 
 -- Directory Navigation
 keymap.set("n", "<leader>m", ":NvimTreeFocus<CR>", { noremap = true, silent = true })
