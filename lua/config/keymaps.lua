@@ -1,4 +1,5 @@
 local keymap = vim.keymap
+local api = vim.api
 
 -- Directory Navigation
 keymap.set("n", "<leader>m", ":NvimTreeFocus<CR>", { noremap = true, silent = true })
@@ -14,3 +15,10 @@ keymap.set("n", "<C-l>", "<C-w>l", opts) -- Navigate Right
 keymap.set("n", "<leader>sv", ":vsplit<CR>", opts) -- Split Vertically
 keymap.set("n", "<leader>sh", ":split<CR>", opts) -- Split Horizontally
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>", opts) -- Toggle minimize
+
+-- Indenting
+keymap.set("v", "<", "<gv")
+keymap.set("v", ">", ">gv")
+
+-- Comments
+-- Use gcc; comment plugin is not working atm :(
