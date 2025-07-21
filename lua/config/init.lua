@@ -23,7 +23,7 @@ local opts = {
 		lazy = true,
 	},
 	install = {
-		colorscheme = { "nightfox" },
+		colorscheme = { "catppuccin-macchiato" },
 	},
 	rtp = {
 		disabled_plugins = {
