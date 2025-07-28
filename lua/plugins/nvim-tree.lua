@@ -4,7 +4,11 @@ return {
   config = {
     filters = {
       dotfiles = false,
-      custom = { ".git" }
+      custom = {
+        "^\\.(?!gitignore$).*",
+        "^\\.DS_Store$",
+        "^\\.git$",
+      }
     },
     git = {
       enable = false
