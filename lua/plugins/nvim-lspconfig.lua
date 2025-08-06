@@ -137,6 +137,19 @@ local config = function()
 		},
 	})
 
+  -- Terraform
+  lspconfig.terraformls.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = { "terraform", "tf" },
+    settings = {
+      terraform = {
+        -- enable formatting support (terraformls supports it)
+        enableFmt = true,
+      },
+    },
+  })
+
 	for type, icon in pairs(diagnostic_signs) do
 		local hl = "DiagnosticSign" .. type
 		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
