@@ -53,6 +53,7 @@ local config = function()
 
 	-- json
 	lspconfig.jsonls.setup({
+    cmd = { "vscode-json-language-server", "--stdio" },
 		capabilities = capabilities,
 		on_attach = on_attach,
 		filetypes = { "json", "jsonc" },
