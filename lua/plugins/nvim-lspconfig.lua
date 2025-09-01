@@ -56,6 +56,33 @@ local config = function()
 		capabilities = capabilities,
 		on_attach = on_attach,
 		filetypes = { "json", "jsonc" },
+    settings = {
+      json = {
+        schemas = {
+          {
+            description = "AWS Step Functions State Machine",
+            fileMatch = { "stepfunction*.json", "stepfunctions*.asl.json" },
+            url = "https://raw.githubusercontent.com/awslabs/goformation/master/schema/stepfunctions/state-machine.json"
+          },
+          {
+            description = "Terraform JSON configuration",
+            fileMatch = { "*.tf.json" },
+            url = "https://json.schemastore.org/terraform.json"
+          },
+          {
+            description = "Package.json",
+            fileMatch = { "package.json" },
+            url = "https://json.schemastore.org/package.json"
+          },
+          {
+            description = "ESLint config",
+            fileMatch = { ".eslintrc", ".eslintrc.json" },
+            url = "https://json.schemastore.org/eslintrc.json"
+          },
+        },
+        validate = { enable = true }, -- enable built-in JSON validation
+      },
+    },
 	})
 
 	-- python
