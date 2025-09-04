@@ -178,6 +178,23 @@ local config = function()
     },
   })
 
+  local tflint = {
+    lintCommand = "tflint --format json",
+    lintFormats = { "%f:%l:%c: %m" },
+    lintStdin = false,
+    lintSource = "tflint",
+  }
+
+  lspconfig.efm.setup({
+    init_options = { documentFormatting = true },
+    filetypes = { "terraform", "tf" },
+    settings = {
+      languages = {
+        terraform = { tflint },
+      },
+    },
+  })
+
 	for type, icon in pairs(diagnostic_signs) do
 		local hl = "DiagnosticSign" .. type
 		vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })

@@ -8,6 +8,7 @@ return {
         "^\\.(?!gitignore$).*",
         "^\\.DS_Store$",
         "^\\.git$",
+        "^\\.venv$",
       }
     },
     git = {
