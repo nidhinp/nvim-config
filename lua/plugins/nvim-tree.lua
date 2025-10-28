@@ -9,6 +9,7 @@ return {
         "^\\.DS_Store$",
         "^\\.git$",
         "^\\.venv$",
+        "^__pycache__$",
       }
     },
     git = {

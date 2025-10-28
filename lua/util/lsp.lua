@@ -29,6 +29,14 @@ M.on_attach = function(client, bufnr)
 	if client.name == "ts_ls" then
 		mapkey("<leader>oi", "TypeScriptOrganizeImports", "n", opts) -- organise imports
 	end
+
+  vim.api.nvim_buf_create_user_command(bufnr, "Format", function()
+		vim.lsp.buf.format({
+			async = false,
+			timeout_ms = 10000,
+		})
+	end, { desc = "Format current buffer with LSP" })
+
 end
 
 M.typescript_organise_imports = {

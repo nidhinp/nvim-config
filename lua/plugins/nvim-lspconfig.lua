@@ -185,15 +185,15 @@ local config = function()
     lintSource = "tflint",
   }
 
-  lspconfig.efm.setup({
-    init_options = { documentFormatting = true },
-    filetypes = { "terraform", "tf" },
-    settings = {
-      languages = {
-        terraform = { tflint },
-      },
-    },
-  })
+  -- lspconfig.efm.setup({
+  --   init_options = { documentFormatting = true },
+  --   filetypes = { "terraform", "tf" },
+  --   settings = {
+  --     languages = {
+  --       terraform = { tflint },
+  --     },
+  --   },
+  -- })
 
 	for type, icon in pairs(diagnostic_signs) do
 		local hl = "DiagnosticSign" .. type
@@ -238,6 +238,7 @@ local config = function()
 			"c",
 			"cpp",
 			"go",
+      "terraform",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -268,6 +269,7 @@ local config = function()
 				c = { clangformat, cpplint },
 				cpp = { clangformat, cpplint },
 				go = { gofumpt, go_revive },
+        terraform = { tflint },
 			},
 		},
 	})
